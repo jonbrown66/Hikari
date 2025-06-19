@@ -11,8 +11,11 @@ import localFont from 'next/font/local';
 import type { Viewport } from 'next';
 import { RootProvider } from 'fumadocs-ui/provider';
 import { TRPCReactProvider } from '@/trpc/react';
+<<<<<<< HEAD
 // import { StagewiseToolbar } from '@stagewise/toolbar-next';
 import { ReactPlugin } from '@stagewise-plugins/react';
+=======
+>>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
 
 export const viewport: Viewport = {
   themeColor: [

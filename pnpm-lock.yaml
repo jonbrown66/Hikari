@@ -92,12 +92,15 @@ importers:
       '@radix-ui/themes':
         specifier: ^3.1.1
         version: 3.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+<<<<<<< HEAD
       '@stagewise-plugins/react':
         specifier: ^0.4.7
         version: 0.4.7(@stagewise/toolbar@0.4.6)
       '@stagewise/toolbar-next':
         specifier: ^0.4.6
         version: 0.4.6(@types/react@18.3.3)(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+=======
+>>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
       '@stripe/stripe-js':
         specifier: 2.4.0
         version: 2.4.0
@@ -412,28 +415,40 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+<<<<<<< HEAD
     libc: [glibc]
+=======
+>>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
 
   '@next/swc-linux-arm64-musl@14.2.3':
     resolution: {integrity: sha512-0D4/oMM2Y9Ta3nGuCcQN8jjJjmDPYpHX9OJzqk42NZGJocU2MqhBq5tWkJrUQOQY9N+In9xOdymzapM09GeiZw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+<<<<<<< HEAD
     libc: [musl]
+=======
+>>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
 
   '@next/swc-linux-x64-gnu@14.2.3':
     resolution: {integrity: sha512-ENPiNnBNDInBLyUU5ii8PMQh+4XLr4pG51tOp6aJ9xqFQ2iRI6IH0Ds2yJkAzNV1CfyagcyzPfROMViS2wOZ9w==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+<<<<<<< HEAD
     libc: [glibc]
+=======
+>>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
 
   '@next/swc-linux-x64-musl@14.2.3':
     resolution: {integrity: sha512-BTAbq0LnCbF5MtoM7I/9UeUu/8ZBY0i8SFjUMCbPDOLv+un67e2JgyN4pmgfXBwy/I+RHu8q+k+MCkDN6P9ViQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+<<<<<<< HEAD
     libc: [musl]
+=======
+>>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
 
   '@next/swc-win32-arm64-msvc@14.2.3':
     resolution: {integrity: sha512-AEHIw/dhAMLNFJFJIJIyOFDzrzI5bAjI9J26gbO5xhAKHYTZ9Or04BesFPXiAYXDNdrwTP2dQceYA4dL1geu8A==}
@@ -1349,6 +1364,7 @@ packages:
   '@shikijs/transformers@1.10.3':
     resolution: {integrity: sha512-MNjsyye2WHVdxfZUSr5frS97sLGe6G1T+1P41QjyBFJehZphMcr4aBlRLmq6OSPBslYe9byQPVvt/LJCOfxw8Q==}
 
+<<<<<<< HEAD
   '@stagewise-plugins/react@0.4.7':
     resolution: {integrity: sha512-o3pa/2Tc/Lo+e7OEEDx45vx2NczPgDyGYQHfCZzN0IHLVDm/mj5uSmi5Ldo2NjJdThK4hSQNA5MLc4zBhkUlNg==}
     peerDependencies:
@@ -1370,6 +1386,8 @@ packages:
   '@stagewise/toolbar@0.4.6':
     resolution: {integrity: sha512-XMPTuj7yhqjwnr7ap4OHJHA132fRgTf7uU936anlW6eINJcFRx2hWOiHXnc7d4ZssBXiuwJv6mMY3K7UJDaAwg==}
 
+=======
+>>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
   '@stripe/stripe-js@2.4.0':
     resolution: {integrity: sha512-WFkQx1mbs2b5+7looI9IV1BLa3bIApuN3ehp9FP58xGg7KL9hCHDECgW3BwO9l9L+xBPVAD7Yjn1EhGe6EDTeA==}
 
@@ -4904,6 +4922,7 @@ snapshots:
     dependencies:
       shiki: 1.10.3
 
+<<<<<<< HEAD
   '@stagewise-plugins/react@0.4.7(@stagewise/toolbar@0.4.6)':
     dependencies:
       '@stagewise/toolbar': 0.4.6
@@ -4923,6 +4942,8 @@ snapshots:
 
   '@stagewise/toolbar@0.4.6': {}
 
+=======
+>>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
   '@stripe/stripe-js@2.4.0': {}
 
   '@supabase/auth-helpers-nextjs@0.10.0(@supabase/supabase-js@2.45.4)':
@@ -5729,7 +5750,11 @@ snapshots:
       debug: 4.3.4
       enhanced-resolve: 5.15.0
       eslint: 8.57.0
+<<<<<<< HEAD
       eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
+=======
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
+>>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.2
@@ -5741,7 +5766,11 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
+<<<<<<< HEAD
   eslint-module-utils@2.8.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0):
+=======
+  eslint-module-utils@2.8.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0):
+>>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -5762,7 +5791,11 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
+<<<<<<< HEAD
       eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
+=======
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
+>>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
       hasown: 2.0.1
       is-core-module: 2.13.1
       is-glob: 4.0.3

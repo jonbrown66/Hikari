@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from 'next/navigation';
 
 export function ImageUpload({ user }: { user: any }) {
-  const [avatarUrl, setAvatarUrl] = useState(`${user?.avatar_url || ''}?t=${Date.now()}`);
+  const [avatarUrl, setAvatarUrl] = useState(`${user.avatar_url}?t=${Date.now()}`);
   const [imageUrl, setImageUrl] = useState("");
   const imageInputRef = useRef<HTMLInputElement>(null);
   const [isPending, startTransition] = useTransition();
@@ -118,4 +118,8 @@ export function ImageUpload({ user }: { user: any }) {
       </p>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
