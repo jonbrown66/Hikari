@@ -118,8 +118,4 @@ export function ImageUpload({ user }: { user: any }) {
       </p>
     </div>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 5996a41252eaf1ed13f8c4f142cfd80b9b0cacba
