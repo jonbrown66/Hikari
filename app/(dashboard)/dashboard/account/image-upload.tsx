@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEvent, useRef, useState, useTransition } from "react";
+import { ChangeEvent, useRef, useState, useTransition, useEffect } from "react";
 import { toast } from "@/components/ui/use-toast";
 import Image from "next/image";
 import { uploadImage } from "@/utils/supabase/storage/client";
@@ -9,11 +9,19 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from 'next/navigation';
 
 export function ImageUpload({ user }: { user: any }) {
-  const [avatarUrl, setAvatarUrl] = useState(`${user.avatar_url}?t=${Date.now()}`);
+  const [avatarUrl, setAvatarUrl] = useState('');
   const [imageUrl, setImageUrl] = useState("");
   const imageInputRef = useRef<HTMLInputElement>(null);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
+
+  useEffect(() => {
+    if (user?.avatar_url) {
+      setAvatarUrl(`${user.avatar_url}?t=${Date.now()}`);
+    } else {
+      setAvatarUrl("/Transhumans - Pilot.png");
+    }
+  }, [user?.avatar_url]);
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -42,7 +50,7 @@ export function ImageUpload({ user }: { user: any }) {
       const imageFile = await convertBlobUrlToFile(imageUrl);
       const { imageUrl: uploadedImageUrl, error } = await uploadImage({
         file: imageFile,
-        bucket: "avatar",
+        bucket: "images",
         folder: user.id,
       });
       if (error) {
@@ -54,11 +62,21 @@ export function ImageUpload({ user }: { user: any }) {
       }
       if (uploadedImageUrl) {
         setAvatarUrl(`${uploadedImageUrl}?t=${Date.now()}`);
-        await fetch('/api/update-avatar', {
+        const response = await fetch('/api/update-avatar', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userId: user.id, avatarUrl: uploadedImageUrl }),
         });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          toast({
+            title: `Failed to update avatar: ${errorData.error || response.statusText}`,
+            variant: "destructive",
+          });
+          return;
+        }
+
         toast({
           title: "Successfully uploaded image",
           variant: "default",
@@ -74,7 +92,7 @@ export function ImageUpload({ user }: { user: any }) {
       <span className="text-sm font-medium">Avatar Image</span>
       <div className="ml-1 w-24 h-24 rounded-lg overflow-hidden border-2 border-primary p-0.5">
       <Image 
-        src={imageUrl || avatarUrl || '/default-avatar.png'} 
+        src={imageUrl || avatarUrl || '/Transhumans - Pilot.png'} 
         width={96} 
         height={96} 
         alt="User Avatar" 

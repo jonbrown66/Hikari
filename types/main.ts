@@ -13,7 +13,7 @@ export interface User {
   email: string | null | undefined;
   email_verified: string | null;
   id: string;
-  image: string | null;
+  avatar_url: string | null;
   name: string | null;
   stripe_current_period_end: string | null;
   stripe_customer_id: string | null;

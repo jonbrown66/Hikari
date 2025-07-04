@@ -15,9 +15,8 @@ type UploadProps = {
 export const uploadImage = async ({ file, bucket, folder }: UploadProps) => {
   const fileName = file.name;
   const fileExtension = fileName.slice(fileName.lastIndexOf(".") + 1);
-  const path = `${folder ? folder + "/" : ""}avatar_url.${fileExtension}`;
-
-  console.log(`Preparing to upload image: ${fileName} to bucket: ${bucket} in folder: ${folder}`);
+  const uniqueFileName = `avatar_${Date.now()}.${fileExtension}`;
+  const path = `${folder ? folder + "/" : ""}${uniqueFileName}`;
 
   try {
     file = await imageCompression(file, {

@@ -138,8 +138,26 @@ alter table subscriptions enable row level security;
 create policy "Can only view own subs data." on subscriptions for select using (auth.uid() = user_id);
 
 /**
+* POSTS
+* Note: This table contains blog post data.
+*/
+create table posts (
+  id uuid default gen_random_uuid() primary key,
+  user_id uuid references public.users(id) not null,
+  title text not null,
+  content text,
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null,
+  updated_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+alter table posts enable row level security;
+create policy "Allow public read-only access." on posts for select using (true);
+create policy "Can create posts." on posts for insert with check (auth.uid() = user_id);
+create policy "Can update own posts." on posts for update using (auth.uid() = user_id);
+create policy "Can delete own posts." on posts for delete using (auth.uid() = user_id);
+
+/**
  * REALTIME SUBSCRIPTIONS
  * Only allow realtime listening on public tables.
  */
 drop publication if exists supabase_realtime;
-create publication supabase_realtime for table products, prices;
+create publication supabase_realtime for table products, prices, posts;

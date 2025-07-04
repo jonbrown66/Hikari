@@ -151,20 +151,6 @@ export default async function AccountPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="grid gap-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
-                <LockIcon className="h-5 w-5" />
-                <div>
-                  <p className="text-sm font-medium">
-                    Two-Factor Authentication
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Add an extra layer of security to your account.
-                  </p>
-                </div>
-              </div>
-              <Switch id="two-factor-auth" />
-            </div>
             <div className="grid gap-2">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">

@@ -4,16 +4,16 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { User } from '@/types/main';
 
 interface UserAvatarProps extends AvatarProps {
-  user: Pick<User, 'image' | 'name'>;
+  user: Pick<User, 'avatar_url' | 'name'>;
 }
 
 export function UserAvatar({ user, ...props }: UserAvatarProps) {
   return (
     <Avatar {...props}>
-      {user.image ? (
-        <AvatarImage alt="Picture" src={user.image} />
+      {user.avatar_url ? (
+        <AvatarImage alt="Picture" src={`${user.avatar_url}?t=${Date.now()}`} className="object-cover" />
       ) : (
-        <AvatarImage alt="Default Avatar" src="/Transhumans - Pilot.png" />
+        <AvatarImage alt="Default Avatar" src="/Transhumans - Pilot.png" className="object-cover" />
       )}
     </Avatar>
   );

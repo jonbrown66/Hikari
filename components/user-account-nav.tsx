@@ -1,6 +1,5 @@
 'use client';
 
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
@@ -13,9 +12,10 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { Database } from '@/types/db';
 import { User } from '@/types/main'
 import Image from "next/image"
+import { createClient } from '@/utils/supabase/client'; // Import your custom createClient
+import { useEffect, useState } from "react";
 
 interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
   user: {
@@ -28,7 +28,16 @@ interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function UserAccountNav({ user }: UserAccountNavProps) {
   const router = useRouter()
-  const supabase = createClientComponentClient<Database>()
+  const supabase = createClient()
+  const [displayAvatarUrl, setDisplayAvatarUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (user?.avatar_url) {
+      setDisplayAvatarUrl(`${user.avatar_url}?t=${Date.now()}`);
+    } else {
+      setDisplayAvatarUrl("/Transhumans - Pilot.png");
+    }
+  }, [user?.avatar_url]);
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
@@ -44,14 +53,16 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
         size="icon"
         className="overflow-hidden rounded-full"
       >
-        <Image
-          src={`${user?.avatar_url || "/placeholder-user.jpg"}?t=${Date.now()}`}
-          width={36}
-          height={36}
-          alt="Avatar"
-          className="overflow-hidden rounded-full"
-          unoptimized
-        />
+        {displayAvatarUrl && (
+          <Image
+            src={displayAvatarUrl}
+            width={36}
+            height={36}
+            alt="Avatar"
+            className="overflow-hidden rounded-full object-cover"
+            unoptimized
+          />
+        )}
       </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end">
@@ -76,4 +87,3 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
 
   )
 }
-
